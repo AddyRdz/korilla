@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import Receipt from './Receipt';
 import './App.css';
 
-
-
-function App() {
+const App = () => {
     const initialState = [
       {
         id: 1,
@@ -52,25 +50,24 @@ function App() {
 
 
   const [receiptState, setReceiptState] = useState(initialState)
-  console.log(receiptState)
 
-  const hide = (paid) => {
-      setReceiptState(...receiptState, !receiptState.paid)
+  const hide = (id) => {
+      setReceiptState(receiptState.map((reciept) => {
+        if (reciept.id === id) {
+          reciept.paid = !reciept.paid
+       }
+       return reciept
+      }))
   }
-
   return (
       <>
-      <main>
-          {
-           receiptState.map((item) => {          
-               return(
-                   <Receipt key={item.id} person={ item.person } order={ item.order } main={ item.order.main } paid={item.paid} hide={hide}/>
-                   )
-            })
-        }
-    
-        
-      </main>
+        <main>
+            {
+            receiptState.map((item) => (
+                <Receipt key={ item.id } id={ item.id } person={ item.person } order={ item.order } main={ item.order.main } paid={ item.paid } hide={ hide } />
+              ))
+            }
+        </main>
     </>
   );
 }

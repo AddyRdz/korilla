@@ -1,9 +1,8 @@
 import React from "react"
 
-function Receipt({person, order, main, paid, hide}){
-
+const Receipt = ({person, order, main, paid, hide, id}) => {
     return(
-        <div onClick={ () => hide (paid) } className={paid ? "hidden": null} >
+        <div onClick={ () => hide(id) } className={ paid ? "hidden": null } >
             <h1 className="person">{person}</h1>
                 <ul className="order">
                     <li>{main}</li>
