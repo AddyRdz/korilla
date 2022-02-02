@@ -20,15 +20,13 @@ Build a prototype of this short order receipts tracker.
 1. Fork and clone this repository.
 1. Change into the new directory.
 1. Install dependencies (`npm i` or `npm install`).
-1. Check out to a new branch with `git checkout -b dev`.
 1. Fulfill the listed requirements.
 
 Unless otherwise stated, assignments are due the next class day by 10 am ET. 
 
 ## Requirements
 
-Follow the steps below and finish all parts. If you have extra time, finish the
-Stretch Goal as well.
+Follow the steps below and finish all parts. If you have extra time, finish the Stretch Goals as well.
 
 Your application must compile without syntax errors and load in the browser. If there are errors you can't solve, comment them out and explain what you think is wrong. 
 
@@ -83,7 +81,7 @@ const initialState = [
 ];
 ```
 
-- Add receipts state to the App with the useState hook and initialize the state by passing useState the initialState array that is in the App.js file.
+- Add receipts state to the App with the `useState` hook and initialize the state by passing `useState` the `initialState` array that is in the App.js file.
 
 Make a Receipt component that renders the following data from the first receipt:
 
